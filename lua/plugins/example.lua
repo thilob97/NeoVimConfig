@@ -12,13 +12,18 @@ return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
+  {"scottmckendry/cyberdream.nvim",
+    transparent = true,
+  },
+
   { 'projekt0n/github-nvim-theme' },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
      -- colorscheme = "gruvbox",
-    colorscheme = "github_dark_tritanopia",
+    -- colorscheme = "github_dark_tritanopia",
+      colo = "cyberdream",
     },
   },
 
