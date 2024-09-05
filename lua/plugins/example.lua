@@ -9,21 +9,44 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
+  {"0oAstro/dim.lua",
+  dependencies = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+  },
+  {'pwntester/octo.nvim', 
+    dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'nvim-tree/nvim-web-devicons',
+  }, 
+    config = function()
+      require"octo".setup()
+    end,
+    keys = {
+      {"<leader>O", "<cmd>Octo<cr>", desc = "Octo"},
+    }
+  },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
   {"scottmckendry/cyberdream.nvim",
     transparent = true,
   },
-
+  {"shaunsingh/nord.nvim"},
+  {"AlexvZyl/nordic.nvim",
+    transparent_bg = true,
+  },
   { 'projekt0n/github-nvim-theme' },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-     -- colorscheme = "gruvbox",
-    -- colorscheme = "github_dark_tritanopia",
-      colo = "cyberdream",
+      -- colorscheme = "gruvbox",
+      -- colorscheme = "github_dark_tritanopia",
+      -- colorscheme = "cyberdream",
+      -- colorscheme = "desert",
+      -- colorscheme = "murphy",
+      -- colorscheme = "nord",
+      colorsdcheme = "nordic",
     },
   },
 
